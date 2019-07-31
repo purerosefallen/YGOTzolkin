@@ -3,7 +3,7 @@
 YGOTzolkin是另一个用Unity 2018.3实现的[YGOPro](https://github.com/Fluorohydride/ygopro)客户端。
 目前这个客户端仅实现了最基本的功能并且部分实现是临时的。未实现的最重要的部分是一些具有指示性的特效如当发动一张卡时的特效、当连锁被无效时的特效或当一个衍生物消失时的特效等。此外还没有任何美术风格上的设计。此客户端能够连接到基于[SRVPro](https://github.com/moecube/srvpro)的YGOPro服务器。
 
-__与YGOPro2的不同__
+__与YGOPro2的不同__  
 虽然同样用Unity实现，此客户端旨在提供与[YGOPro2](https://github.com/lllyasviel/YGOProUnity_V2)完全不同的决斗体验。代码并非重构自YGOPro2而是从零开始编写，另外引擎版本和UI系统也不同。
 
 ## Build
