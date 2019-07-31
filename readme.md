@@ -1,10 +1,10 @@
 # YGOTzolkin
 
 YGOTzolkin is another [YGOPro](https://github.com/Fluorohydride/ygopro) client implemented on Unity 2018.3  
-Currently only the most basic functions of this client are implemented and part of the implementations are temporary. The most important unrealized part is all the indicative effects like the effects when a card is activating, when a chain is disabled or when a token is disappearing. Besides, there are not any artistic style designs. This client can connect to other YGOPro server which is based on [SRVPro](https://github.com/moecube/srvpro).  
+Currently only the most basic functions of this client are implemented and part of the implementations are temporary. The most important unrealized part is all the indicative effects like the effects when a card is activated, when a chain is disabled or when a token is disappearing. Besides, there are not any artistic style designs. This client can connect to other YGOPro server which is based on [SRVPro](https://github.com/moecube/srvpro).  
 
 __Differences from YGOPro2__  
-Although implemented on Unity as well, this client is designed to provide a new duel experience which will be totally different from [YGOPro2](https://github.com/lllyasviel/YGOProUnity_V2). The code of this client is not refactored from YGOPro2 but is fully progarmmed from zero. In addition, the engine version and the UI system is different.  
+Although implemented on Unity as well, this client is designed to provide a new duel experience which will be totally different from [YGOPro2](https://github.com/lllyasviel/YGOProUnity_V2). The code of this client is not refactored from YGOPro2 but is fully programmed from zero. In addition, the engine version and the UI system are different.  
 
 ## Build
 
@@ -25,12 +25,12 @@ Copy ```strings.conf```, ```lflist.conf```, ```cards.cdb```, ```pics```, ```text
 
 * Necessary function of YGOPro
   * Indicative effects and animations
-  * Expansions(pre-released cards) support
+  * Expansions (pre-released cards) support
   * Replay mode
   * WindBot integration
   * Old Master Rule support
   * Sound
-  * Others
+  * Miscellaneous
 * Art works
   * UI design
 
