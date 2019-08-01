@@ -477,10 +477,9 @@ namespace YGOTzolkin.UI
             System.Random random = new System.Random();
             for (int i = 0; i < 3; ++i)
             {
-                for (int j = 0; j < allCards[i].Count; ++j)
+                for(int j=allCards[i].Count-1;j>=0;--j)
                 {
-                    int idx = random.Next() % allCards[i].Count;
-                    allCards[i].Swap(idx, j);
+                    allCards[i].Swap(j, random.Next() % (j + 1));
                 }
                 SpreadCard(i);
             }
