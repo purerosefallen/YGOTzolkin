@@ -16,10 +16,10 @@ Although implemented on Unity as well, this client is designed to provide a new 
 ## Run
 
 * Run in Unity editor
-Copy ```strings.conf```, ```lflist.conf```, ```cards.cdb```, ```pics```, and ```texture``` from YGOPro to the project folder.
+Copy ```strings.conf```, ```lflist.conf```, ```cards.cdb```, ```pics```, and ```textures``` from YGOPro to the project folder.
 
 * Run built executable
-Copy ```strings.conf```, ```lflist.conf```, ```cards.cdb```, ```pics```, ```texture``` from YGOPro and ```tzlstrings.conf``` from project folder to the folder of the executable, and then run it.
+Copy ```strings.conf```, ```lflist.conf```, ```cards.cdb```, ```pics```, ```textures``` from YGOPro and ```tzlstrings.conf``` from project folder to the folder of the executable, and then run it.
 
 ## Rough TODO List
 

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -20,7 +19,6 @@ namespace YGOTzolkin.UI
         private readonly LinkedList<CardData> cachedDatas;
         private LinkedListNode<CardData> currentNode;
         private readonly int capacity;
-        private float dragPoint;
 
         public CardDescriptor()
         {
