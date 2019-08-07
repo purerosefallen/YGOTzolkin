@@ -15,10 +15,10 @@ __与YGOPro2的不同__
 
 ## Run
 
-* 在Unity editor中运行
+* 在Unity editor中运行  
 从YGOPro中复制```strings.conf```、```lflist.conf```、```cards.cdb```、```pics```和```textures```到项目文件夹。
 
-* 运行可执行程序
+* 运行可执行程序  
 从YGOPro中复制```strings.conf```、```lflist.conf```、```cards.cdb```、```pics```、```textures```，从项目文件夹中复制```tzlstrings.conf```到可执行程序的文件夹然后运行。
 
 ## 粗略的TODO List
