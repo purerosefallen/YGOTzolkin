@@ -15,21 +15,21 @@ Although implemented on Unity as well, this client is designed to provide a new 
 
 ## Run
 
-* Run in Unity editor
+* Run in Unity editor  
 Copy ```strings.conf```, ```lflist.conf```, ```cards.cdb```, ```pics```, and ```textures``` from YGOPro to the project folder.
 
-* Run built executable
+* Run built executable  
 Copy ```strings.conf```, ```lflist.conf```, ```cards.cdb```, ```pics```, ```textures``` from YGOPro and ```tzlstrings.conf``` from project folder to the folder of the executable, and then run it.
 
 ## Rough TODO List
 
-* Necessary function of YGOPro
+* Necessary functions of YGOPro
   * Indicative effects and animations
   * Expansions (pre-released cards) support
   * Replay mode
   * WindBot integration
   * Old Master Rule support
-  * Sound
+  * Sounds
   * Miscellaneous
 * Art works
   * UI design
