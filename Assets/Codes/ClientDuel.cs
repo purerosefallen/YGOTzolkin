@@ -210,7 +210,7 @@ namespace YGOTzolkin
                         if (stoc == SToCMessage.TimeLimit)
                         {
                             canGetNextMessage = false;
-                            blockedMsg = new Action(() => stocHanders[stoc](reader));
+                            blockedMsg = () => stocHanders[stoc](reader);
                         }
                         else
                         {
@@ -228,11 +228,11 @@ namespace YGOTzolkin
                         if (NeedBlocking(message))
                         {
                             canGetNextMessage = false;
-                            blockedMsg = new Action(() =>
+                            blockedMsg = () =>
                             {
                                 GameInfo.Instance.CurrentMessage = message;
                                 gmHandlers[message](reader);
-                            });
+                            };
                         }
                         else
                         {

@@ -6,11 +6,11 @@ namespace YGOTzolkin.Elements
 {
     class MonsterPanel : IPoolSupporter
     {
-        public GameObject PanelObjecet;
-        public TextMeshPro TextAtk;
-        public TextMeshPro TextDef;
-        public TextMeshPro TextLevel;
-        public GameObject StarObject;
+        public GameObject PanelObjecet { get; private set; }
+        public TextMeshPro TextAtk { get; private set; }
+        public TextMeshPro TextDef { get; private set; }
+        public TextMeshPro TextLevel { get; private set; }
+        public GameObject StarObject { get; private set; }
 
         public MonsterPanel()
         {

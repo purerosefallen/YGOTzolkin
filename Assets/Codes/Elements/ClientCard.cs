@@ -450,7 +450,7 @@ namespace YGOTzolkin.Elements
                     infoPanel = PanelPool.New();
                 }
                 infoPanel.PanelObjecet.transform.position = RealPosition + new Vector3(0, 1, -4.4f);
-                //todo fix color
+
                 if (Data.Attack < Data.BaseAttack)
                 {
                     infoPanel.TextAtk.text = "<color=#888888>" + (Data.Attack >= 0 ? Data.Attack.ToString() : "?") + "</color>";
@@ -781,11 +781,11 @@ namespace YGOTzolkin.Elements
             }
             else if (GameInfo.Instance.CurrentMessage == GameMessage.SelectChain)
             {
-                activateButton?.Callback(null);
+                activateButton?.OnClick(null);
             }
             else if (GameInfo.Instance.CurrentMessage == GameMessage.SelectBattleCmd && activateButton != null && buttons.Count == 1)
             {
-                buttons[0].Callback(null);
+                buttons[0].OnClick(null);
             }
             else if (Overlay.Count != 0 && !Selectable)
             {

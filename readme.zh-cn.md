@@ -8,17 +8,17 @@ __与YGOPro2的不同__
 
 ## Build
 
-1. 下载并安装Unity 2018.3
+1. 下载并安装Unity 2018.3.5
 2. 下载并安装Visual Studio 2017 或 Visual Studio 2019
 3. 用Unity打开 ```Assets/main.unity```
 4. 点击菜单栏 ```Assets--Open C# Project```
 
 ## Run
 
-* 在Unity editor中运行
+* 在Unity editor中运行  
 从YGOPro中复制```strings.conf```、```lflist.conf```、```cards.cdb```、```pics```和```textures```到项目文件夹。
 
-* 运行可执行程序
+* 运行可执行程序  
 从YGOPro中复制```strings.conf```、```lflist.conf```、```cards.cdb```、```pics```、```textures```，从项目文件夹中复制```tzlstrings.conf```到可执行程序的文件夹然后运行。
 
 ## 粗略的TODO List

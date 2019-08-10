@@ -9,14 +9,14 @@ namespace YGOTzolkin.Elements
 {
     class CommandButton : IPoolSupporter
     {
-        public GameObject ButtonObject;
+        public GameObject ButtonObject { get; private set; }
         private int response;
         private List<Tuple<int, int>> activateOptions;
 
         public CommandButton()
         {
             ButtonObject = MonoBehaviour.Instantiate(Resources.Load("Prefabs/CommandButton") as GameObject);
-            Tools.BindEvent(ButtonObject, EventTriggerType.PointerClick, Callback);
+            Tools.BindEvent(ButtonObject, EventTriggerType.PointerClick, OnClick);
             Tools.BindEvent(ButtonObject, EventTriggerType.Scroll, MainGame.Instance.Descriptor.OnTextScroll);
         }
 
@@ -59,7 +59,7 @@ namespace YGOTzolkin.Elements
             activateOptions?.Clear();
         }
 
-        public void Callback(BaseEventData data)
+        public void OnClick(BaseEventData data)
         {
             if (activateOptions != null && activateOptions.Count > 1)
             {

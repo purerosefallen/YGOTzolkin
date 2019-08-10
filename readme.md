@@ -8,17 +8,17 @@ Although implemented on Unity as well, this client is designed to provide a new 
 
 ## Build
 
-1. Download and install Unity 2018.3
+1. Download and install Unity 2018.3.5
 2. Download and install Visual Studio 2017 or Visual Studio 2019
 3. Open ```Assets/main.unity``` with Unity
 4. Click ```Assets--Open C# Project``` on menu bar
 
 ## Run
 
-* Run in Unity editor
+* Run in Unity editor  
 Copy ```strings.conf```, ```lflist.conf```, ```cards.cdb```, ```pics```, and ```textures``` from YGOPro to the project folder.
 
-* Run built executable
+* Run built executable  
 Copy ```strings.conf```, ```lflist.conf```, ```cards.cdb```, ```pics```, ```textures``` from YGOPro and ```tzlstrings.conf``` from project folder to the folder of the executable, and then run it.
 
 ## Rough TODO List

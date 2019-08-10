@@ -97,6 +97,7 @@ namespace YGOTzolkin.UI
             TryGetControl(out btnCancelFinish, "BtnCancelFinish");
             TryGetControl(out btnSurrender, "BtnSurrender");
             btnShuffle.SetButtonName(SysString(1297));
+            btnShuffle.onClick.AddListener(OnShuffle);
             btnCancelFinish.onClick.AddListener(CancelOrFinish);
             btnBP.onClick.AddListener(OnBPClick);
             btnM2.onClick.AddListener(OnM2Click);
@@ -363,6 +364,11 @@ namespace YGOTzolkin.UI
         private void OnSurrenderClick()
         {
             NetworkService.Instance.Send(CToSMessage.Surrender);
+        }
+
+        private void OnShuffle()
+        {
+            MainGame.Instance.SendCToSResponse(8);
         }
         #endregion
 
