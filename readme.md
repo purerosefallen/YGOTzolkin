@@ -23,13 +23,13 @@ Copy ```strings.conf```, ```lflist.conf```, ```cards.cdb```, ```pics```, ```text
 
 ## Rough TODO List
 
-* Necessary function of YGOPro
+* Necessary functions of YGOPro
   * Indicative effects and animations
   * Expansions (pre-released cards) support
   * Replay mode
   * WindBot integration
   * Old Master Rule support
-  * Sound
+  * Sounds
   * Miscellaneous
 * Art works
   * UI design
