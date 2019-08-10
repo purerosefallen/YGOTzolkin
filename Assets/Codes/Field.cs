@@ -6,6 +6,7 @@ using YGOTzolkin.Elements;
 using YGOTzolkin.Service;
 using YGOTzolkin.YGOModel;
 using YGOTzolkin.Utility;
+using System;
 
 namespace YGOTzolkin
 {
@@ -35,7 +36,7 @@ namespace YGOTzolkin
         internal ClientCard Attacker { get; set; }
         internal List<Chain> CurrentChains { get; private set; }
         internal List<ClientCard>[] HandCards { get; private set; }
-        internal HashSet<ClientCard> InteractiveCards { get; private set; }
+        internal MapList<ClientCard> InteractiveCards { get; private set; }
 
         internal bool IsConfirming { get; private set; }
 
@@ -63,7 +64,7 @@ namespace YGOTzolkin
                 new List<ClientCard>(),
             };
             CurrentChains = new List<Chain>();
-            InteractiveCards = new HashSet<ClientCard>();
+            InteractiveCards = new MapList<ClientCard>();
 
             inertiaTransform = new GameObject().transform;
             inertiaTransform.name = "InertiaSlider";
@@ -226,6 +227,31 @@ namespace YGOTzolkin
         internal void SpreadSelection()
         {
             Spread(SelectableCards);
+        }
+
+        internal void SpreadAvailable()
+        {
+            if (spreadingTranforms.Count == InteractiveCards.Count)
+            {
+                Debug.Log("-->count equals");
+                int a = 0;
+                foreach (var c in InteractiveCards)
+                {
+                    if (spreadingTranforms.ContainsKey(c.Transform))
+                    {
+                        a++;
+                    }
+                }
+                if (a == InteractiveCards.Count)
+                {
+                    return;
+                }
+                Debug.Log("-->contain not equals");
+
+            }
+            EndQuery();
+            InteractiveCards.Sort(ClientCard.ActivateCompare);
+            Spread(InteractiveCards);
         }
 
         private void Spread(IEnumerable<ClientCard> cards, bool querying = false)
@@ -777,11 +803,18 @@ namespace YGOTzolkin
 
         internal void ClearCommands()
         {
-            foreach (var c in InteractiveCards)
+            if (InteractiveCards.Count > 0)
             {
-                c.ClearCommand();
+                if (spreadingTranforms.ContainsKey(InteractiveCards[0].Transform))
+                {
+                    EndQuery();
+                }
+                foreach (var c in InteractiveCards)
+                {
+                    c.ClearCommand();
+                }
+                InteractiveCards.Clear();
             }
-            InteractiveCards.Clear();
         }
 
         internal void Clear()

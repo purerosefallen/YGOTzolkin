@@ -66,17 +66,11 @@ namespace YGOTzolkin.Elements
             return left.Sequence > right.Sequence ? -1 : 1;
         }
 
-        public static int SelectionCompare(ClientCard left, ClientCard right)
-        {
-            //todo
-            return 0;
-        }
-
         public static int ActivateCompare(ClientCard left, ClientCard right)
         {
             if (left.Location == right.Location)
             {
-                return left.Sequence > right.Sequence ? -1 : 1;
+                return left.Sequence > right.Sequence ? 1 : -1;
             }
             return left.Location > right.Location ? -1 : 1;
         }

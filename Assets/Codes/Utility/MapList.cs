@@ -59,6 +59,15 @@ namespace YGOTzolkin.Utility
             Remove(values[i]);
         }
 
+        public void Sort(Comparison<T> comparer)
+        {
+            values.Sort(comparer);
+            for(int i=0;i<values.Count;++i)
+            {
+                indexes[values[i]] = i;
+            }
+        }
+
         public void Add(T value)
         {
             if (indexes.ContainsKey(value))

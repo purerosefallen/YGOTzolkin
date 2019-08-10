@@ -22,6 +22,7 @@ namespace YGOTzolkin.UI
         private Button btnEP;
         private Button btnShuffle;
         private Button btnCancelFinish;
+        private Button btnActions;
 
         private RawImage imgCloseup;
         private TextMeshProUGUI tMPPhase;
@@ -47,6 +48,7 @@ namespace YGOTzolkin.UI
             SetVisible(btnEP.transform, false);
             SetVisible(btnM2.transform, false);
             SetVisible(btnCancelFinish.transform, false);
+            SetVisible(btnActions.transform, false);
             SetVisible(tMPHint.transform, false);
             MainGame.Instance.FrameActions.Add(Update);
             if (GameInfo.Instance.PlayerType == PlayerType.Observer)
@@ -96,6 +98,9 @@ namespace YGOTzolkin.UI
             TryGetControl(out btnShuffle, "BtnShuffle");
             TryGetControl(out btnCancelFinish, "BtnCancelFinish");
             TryGetControl(out btnSurrender, "BtnSurrender");
+            TryGetControl(out btnActions, nameof(btnActions));
+            btnActions.onClick.AddListener(OnActions);
+            btnActions.SetButtonName(TzlString(16));
             btnShuffle.SetButtonName(SysString(1297));
             btnShuffle.onClick.AddListener(OnShuffle);
             btnCancelFinish.onClick.AddListener(CancelOrFinish);
@@ -139,6 +144,7 @@ namespace YGOTzolkin.UI
         internal void OnResponsed()
         {
             SetVisible(tMPHint.transform, false);
+            SetVisible(btnActions.transform, false);
             if (GameInfo.Instance.CurrentMessage == GameMessage.SelectBattleCmd)
             {
                 SetVisible(btnM2.transform, false);
@@ -162,6 +168,7 @@ namespace YGOTzolkin.UI
             SetVisible(btnBP.transform, canBp);
             SetVisible(btnEP.transform, canEp);
             SetVisible(btnShuffle.transform, canShuffle);
+            SetVisible(btnActions.transform, MainGame.Instance.Field.InteractiveCards.Count > 0);
         }
 
         internal void SetCancelOrFinish(int i)
@@ -369,6 +376,11 @@ namespace YGOTzolkin.UI
         private void OnShuffle()
         {
             MainGame.Instance.SendCToSResponse(8);
+        }
+
+        private void OnActions()
+        {
+            MainGame.Instance.Field.SpreadAvailable();
         }
         #endregion
 
