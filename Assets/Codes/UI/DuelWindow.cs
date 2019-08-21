@@ -161,6 +161,7 @@ namespace YGOTzolkin.UI
         {
             SetVisible(btnM2.transform, canM2);
             SetVisible(btnEP.transform, canEp);
+            SetVisible(btnActions.transform, MainGame.Instance.Field.InteractiveCards.Count > 0);
         }
 
         internal void WhenSelectIdleCmd(bool canBp, bool canEp, bool canShuffle)
@@ -286,6 +287,10 @@ namespace YGOTzolkin.UI
             if (Input.GetKeyUp(KeyCode.D))
             {
                 TglChainWhenAvail.isOn = false;
+            }
+            if(Input.GetKeyUp(KeyCode.F))
+            {
+                MainGame.Instance.Field.SpreadAvailable();
             }
             if (Input.GetMouseButtonDown(1))
             {

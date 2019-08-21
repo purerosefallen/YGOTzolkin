@@ -27,6 +27,7 @@ Copy ```strings.conf```, ```lflist.conf```, ```cards.cdb```, ```pics```, ```text
   * Indicative effects and animations
   * Expansions (pre-released cards) support
   * Replay mode
+  * LAN mode
   * WindBot integration
   * Old Master Rule support
   * Sounds

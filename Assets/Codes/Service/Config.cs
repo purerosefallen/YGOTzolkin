@@ -106,7 +106,7 @@ namespace YGOTzolkin.Service
         }
 
         public static string GetString(string key, string defaultValue = null)
-        {
+        {   
             if (fields.TryGetValue(key, out string val))
             {
                 return val;
@@ -115,7 +115,6 @@ namespace YGOTzolkin.Service
             {
                 fields.Add(key, defaultValue.ToString());
             }
-
             return defaultValue;
         }
 

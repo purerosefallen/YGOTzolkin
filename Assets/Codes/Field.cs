@@ -108,7 +108,8 @@ namespace YGOTzolkin
             if (Input.GetMouseButtonDown(0))
             {
                 startX = Input.mousePosition.x;
-                if (!dragging && (HitTransform == null || !hit.transform.CompareTag("Card") && !hit.transform.CompareTag("CommandButton")))
+                if (!dragging && (HitTransform == null
+                    || !hit.transform.CompareTag("Card") && !hit.transform.CompareTag("CommandButton")))
                 {
                     EndQuery();
                 }

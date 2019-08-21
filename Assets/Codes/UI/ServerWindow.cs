@@ -1,4 +1,6 @@
-﻿using TMPro;
+﻿using System;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using YGOTzolkin.Service;
@@ -15,7 +17,15 @@ namespace YGOTzolkin.UI
         private readonly Button btnQuit;
         private readonly Button btnJoin;
 
-        //todo load cached config
+        private TMP_Dropdown dpdHosts;
+        private TMP_Dropdown dpdNames;
+        private TMP_Dropdown dpdPwds;
+        private TMP_Dropdown dpdPorts;
+
+        private List<string> hosts;
+        private List<string> names;
+        private List<string> ports;
+        private List<string> passwords;
 
         public ServerWindow()
         {
@@ -45,6 +55,30 @@ namespace YGOTzolkin.UI
             btnQuit.SetButtonName(DataService.SysString(1210));
             btnJoin.onClick.AddListener(OnJoin);
             btnJoin.SetButtonName(DataService.SysString(1223));
+
+            TryGetControl(out dpdHosts, nameof(dpdHosts));
+            TryGetControl(out dpdPorts, nameof(dpdPorts));
+            TryGetControl(out dpdPwds, nameof(dpdPwds));
+            TryGetControl(out dpdNames, nameof(dpdNames));
+            hosts = new List<string>(Config.GetString("CachedHosts", string.Empty).Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries));
+            foreach (var h in hosts)
+            {
+                dpdHosts.options.Add(new TMP_Dropdown.OptionData(h));
+            }
+            ports = new List<string>(Config.GetString("CachedPorts", string.Empty).Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries));
+            foreach (var p in ports)
+            {
+                dpdPorts.options.Add(new TMP_Dropdown.OptionData(p.ToString()));
+            }
+            names = new List<string>(Config.GetString("CachedNames", string.Empty).Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries));
+            foreach (var n in names)
+            {
+                dpdNames.options.Add(new TMP_Dropdown.OptionData(n));
+            }
+            dpdNames.onValueChanged.AddListener(OnCachedNames);
         }
 
         internal override void Show()
@@ -65,6 +99,14 @@ namespace YGOTzolkin.UI
         {
             Hide();
             MainGame.Instance.Menu.Show();
+        }
+
+        private void OnCachedNames(int i)
+        {
+            if (i < dpdNames.options.Count)
+            {
+                iptName.text = dpdNames.options[i].text;
+            }
         }
 
         private void OnJoin()
@@ -102,6 +144,10 @@ namespace YGOTzolkin.UI
             Config.Set("Password", iptPassword.text);
             Config.Set("PlayerName", iptName.text);
             GameInfo.Instance.LocalName = iptName.text;
+            if (dpdNames.options.Find((op) => op.text == iptName.text) == null)
+            {
+                dpdNames.options.Add(new TMP_Dropdown.OptionData(iptName.text));
+            }
         }
     }
 }
